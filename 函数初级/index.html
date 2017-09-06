@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//输出任意行数星号金字塔
+		ta(8);
+		function ta(rows){
+			var table='<table>';
+			for(i=1;i<=rows;i++){
+				table +='<tr>';
+				table +='<td>'
+				for(z=1;z<=rows*2-i;z =z+1){
+					table +='_';
+				}
+				for(j=1;j<=2*i-1;j +=1){
+					table +='*';
+				}
+				table +='</td>'
+				table +='</tr>';
+				document.write('</br>');
+			}
+			document.write(table);
+		}
+	//建立任意行列表格
+		tabel(10,10); 
+		tabel(7,5); 
+		function tabel(rows,clos){
+				var table='<table border=1 cellspacing=0>';
+				for(i=1;i<=rows;i++){
+					table +='<tr>'
+					for(j=1;j<=clos;j++){
+						table +='<td>'+j+'-'+i+'</td>';
+					}
+					table +='</tr>'
+					document.write('</br>');
+				}
+				document.write(table);
+			}
+	//对任意一维数组从大到小排序
+		var yi=[45,55,46,86,25,56,66,77]; 
+		yiweishuzu(yi);
+		function yiweishuzu(arr){
+		    for(var i=0; i<arr.length; i++){
+		    	for(var j=i+1; j<arr.length; j++){
+		    		if(arr[i]<arr[j]){
+		    			var temp=arr[i];
+		    			arr[i]=arr[j];
+		    			arr[j]=temp;
+		    		}
+		    	}
+		    }
+		    console.log(arr);
+		}
+	//输出任意二维数组中最大值
+		var er=[
+				[94,34,55],
+		 		[77,88,67],
+		 		[68,9,66]
+		 	];
+		var er2=[
+				[66,34,55,44],
+		 		[77,88,67,43],
+		 		[68,9,66,55],
+		 		[2,3,4,5]
+		 	]; 	
+		erweishuzu(er);
+		erweishuzu(er2);
+		function erweishuzu(arr1){
+			var	max=arr1[0][0];
+			for(i=0;i<arr1.length;i++){
+				for(j=0;j<arr1[i].length;j++){
+					if(max<arr1[i][j]){
+						max=arr1[i][j];
+					}
+				}
+			}	
+			console.log(max);
+		}	
+	</script>
+</body>
+</html>
