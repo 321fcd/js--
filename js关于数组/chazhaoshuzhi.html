@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 查找数组中是否有某一个数值
+		var arr=[2,5,5665,34,32,3,6,38];
+		var result=exist(arr,32);
+		alert(result);
+		function exist(arr,value){
+			if( !(typeof arr =='object' && arguments.length>1) ){
+				return '输入错误';
+			}
+			for(var i=1; i<arr.length;i++){
+				if(arr[i]==value){
+					return true;
+				}
+			}
+			return false;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//升序降序
+		var arr2=[11,12,32,42,25,26,37,48,9];
+		//type=type || '<';
+		//if (type == undefined){
+		//	type='<';
+		//}
+		//type = type ==undefined ? '<' : type;
+		//if(type == '<'){
+		//	sortUp(arr2)
+		//}else if(type == '>'){
+		//	sortdown(arr2)
+		//}
+		
+		sort(arr2,'<');
+		function sort(array,type){
+			if(type == '<'){
+				sortUp(array)
+			}else if(type == '>'){
+				sortdown(array)
+			}
+		}
+		sortUp(array)
+		function sortUp(array){
+			for(var i=0; i<array.length; i++){
+		    	for(var j=i+1; j<array.length; j++){
+		    		if(array[i]>array[j]){
+		    			var temp=array[i];
+		    			array[i]=array[j];
+		    			array[j]=temp;
+		    		}
+		    	}
+		    }
+		    document.write(array);
+		}
+		sortdown(array)
+		function sortdown(array){
+			for(var i=0; i<array.length; i++){
+		    	for(var j=i+1; j<array.length; j++){
+		    		if(array[i]<array[j]){
+		    			var temp=array[i];
+		    			array[i]=array[j];
+		    			array[j]=temp;
+		    		}
+		    	}
+		    }
+		    document.write(array);
+		}
+	</script>
+</body>
+</html>

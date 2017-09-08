@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//数组里的偶数元素筛选出来	 filter()
+		var arr=[1,2,3,4,5,6];
+		function filter(arr){
+			var newarr=[];
+			for(var i=0;i<arr.length;i++){
+				if(arr[i]%2==0){
+					newarr[newarr.length]=arr[i];
+				}
+			}
+			return newarr;
+		}		
+		console.log(filter(arr));
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//数组-->字符串
+		//参数：
+		//arr：特定数组
+		//str：连接符
+		var arr=[1,2,3,4,5,6];
+		function str(arr){
+			var str1='';
+			for(var i=0;i<arr.length;i++){				
+				if(i<arr.length-1){
+					str1+=arr[i]+'-';
+				}else if(i==arr.length-1){
+					str1+=arr[i];
+				}
+			}
+			return str1;
+		}
+		console.log(str(arr));
+		var arr=[1,2,3,4,5,6];
+		function join(arr,str='-'){    //='/'			
+			var result='';
+			// str= str==undefined ? '+' :str;
+			// str= str || '_';
+			
+			for(var i=0;i<arr.length;i++){				
+				if(i<arr.length-1){
+					result+=arr[i]+str;
+				}else if(i==arr.length-1){
+					result+=arr[i];
+				}
+			}
+			return result;
+		}
+		console.log(join(arr));
+	</script>
+</body>
+</html>

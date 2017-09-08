@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//在数组的后面添加任意个数组元素
+		var arr1=[1,2,3,4,5,6,7,8];
+		push(arr1,'a','b','c');
+		function push(arr,...value){    //value 接收剩余参数
+			for(var i=1; i<arguments.length;i++){
+				arr[arr.length]=arguments[i];	
+			}
+			console.log(arr);
+			for(var i=0; i<value.length;i++){
+				arr[arr.length]=value[i];	
+			}
+		
+		console.log(value);
+		}
+	</script>
+</body>
+</html>
