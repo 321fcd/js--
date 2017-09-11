@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>object</title>
+</head>
+<body>
+	<script>
+		//
+			//类                           对象
+			//抽象(模糊)                   具体(清晰)
+			//
+			//
+			//
+			//
+			//
+			//            对象（属性和方法的无序集合）
+			//数组 函数（方法） 日期 正则 自定义
+			//arr
+			//arr1
+		//创建方式
+			//1、json
+				let fengcong={};
+				let lizelu={};
+				let pengyu={};
+			//2、构造函数
+				// function Person(){
+ 
+				// }
+				// let fengcong = new Person();
+				// let lizelu = new Person();
+				// let pengyu = new Person();
+				//添加属性  方法
+				//谁   什么   等于
+				
+				fengcong.age=22;
+				fengcong.name='冯聪';
+				lizelu.age=23;
+				lizelu.name='李泽路';
+				pengyu.age=23;
+				pengyu.name='彭宇'
+				pengyu.height='183cm';
+				fengcong.say=function(){
+					alert(fengcong.name);
+				} 
+				fengcong.say();
+				//访问
+				//谁    什么
+				console.log(fengcong);
+				console.log(lizelu);
+				console.log(pengyu);
+				console.log(lizelu.age);
+				console.log(pengyu.height);
+	</script>
+</body>
+</html>

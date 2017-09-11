@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内置 顶层 函数</title>
+	<script></script>
+</head>
+<body>
+	<script>
+		//内置顶层函数
+			//escape()  编码
+			//unesscape()  译码
+			//Number()  转数字 只有数字型的字符串能转
+			//String()  转字符串
+			//Boolean()  flase\ 0\ null \undefined ‘空字符串’\ NAN  =>flase    剩下的全真。
+			//parseInt()  字符串转换成整数  数字、+、-、空格开始，以第一个非数字字符结束
+			//parseFloat() 字符串转换成整小数  同上，可以识别'.'
+			//isNaN()  is‘不是数字’  若可以转换位数字，则这句话为假，显示false
+			let str='张三';
+			console.log(escape(str));  //编码
+			console.log(unescape(str));  //解码
+			console.log(Number(123));  //转数字
+			console.log(Number(0b1111));
+			console.log(Number(true));  //true转换为1
+			console.log(Number(false));  //转为0
+			console.log(Number(null));  //转为0
+			console.log(Number(undefined));  //转为NaN
+			console.log(Number('0123')) //123
+			console.log(Number(123.00)) //123
+			console.log(Number('123.00')) //123
+			console.log(Number('123.01')) //123.01
+			console.log(Number('123.01.02')) //NaN
+			console.log(Number('123px')) //NaN
+			console.log(Boolean(''))  //false
+			console.log(parseFloat('+11.01'))  //
+			console.log(isNaN())  //
+
+	</script>
+</body>
+</html>
