@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>my Array</title>
+</head>
+<body>
+	<script>
+		//var arr=new Array('a','b','c','d');
+		//console.log(arr);
+		//数组添加数值
+			let arr = new myArray('a','b','c','d',1,2,3,4);
+			console.log(arr);
+			arr.push('x','y','z');
+			//indexOf    查找数组里数值首次出现的位置
+			let indexOf=arr.indexOf('c');
+			console.log(indexOf);
+			//lastIndexOf     最后一次出现的位置
+			let arr2=[1,2,0,5,7,3,9,8,4];
+			let lastIndexOf=arr2.lastIndexOf('a');
+			console.log(lastIndexOf);
+			//reverse  反转
+			let reverse=arr.reverse(arr);
+			console.log(reverse);
+			//join     连接
+			let join=arr.join();
+			console.log(join);
+			//sort     排序
+			let arr1=[1,2,0,5,7,3,9,8,4];
+			let sort=arr1.sort(arr1);
+			console.log(sort);
+			//some   只要一个符合就全对
+			let some=arr.some(function(value){
+				return value=='a';
+			});
+			console.log(some);
+			//every   全符合才对
+			let every=arr.every(function(value){
+				return typeof value=='number';
+			});
+			console.log(every);
+			//map
+			let map=arr.map(function(value){
+		 		return value+'1';     //函数加1
+		 	});
+		 	console.log(map);
+		 	//filter
+		 	let filter=arr.filter(function(value){
+		 		return value%2==0;     //筛选
+			 });
+		 	console.log(filter);
+
+			function myArray(){
+				for(let i=0;i<arguments.length;i++){
+					this[i]=arguments[i];
+				}
+				this.length=arguments.length;
+				this.push=function(){
+					for(let i=0;i<arguments.length;i++){
+						this[this.length]=arguments[i];
+						this.length++;
+					}
+				}
+				//indexOf    查找数组里数值首次出现的位置
+				this.indexOf=function(value){
+					for(let i=0;i<this.length;i++){
+						if(this[i]==value){
+							return i;
+						}
+					}
+					return -1;
+				}
+				//lastIndexOf     最后一次出现的位置
+				this.lastIndexOf=function(value){
+					// if( !(typeof arr =='object' && arguments.length>1) ){
+					// 	return '输入错误';
+					// }
+					for(let i=this.length-1; i>=0;i++){
+						if(this[i]==value){
+							alert(true);
+							var a='第'+i+'位出现';
+							return a;				
+						}
+					}
+					return -1;
+				}
+				//reverse  反转
+				this.reverse=function(arr){
+					var newarr=[];
+					for(var i = this.length-1; i >= 0; i--){
+						push1(newarr,this[i]);
+					}
+					return newarr;
+					function push1(arr,...rest){
+						for (var i = 0; i < rest.length; i++){
+							arr[arr.length]=rest[i];
+						}
+					}
+								
+				}
+				//join     连接
+				this.join=function(arr,str='-'){ 			
+					var result='';
+					// str= str==undefined ? '+' :str;
+					// str= str || '_';			
+					for(var i=0;i<this.length;i++){				
+						if(i<this.length-1){
+							result+=this[i]+str;
+						}else if(i==this.length-1){
+							result+=this[i];
+						}
+					}
+					return result;
+				}
+				//sort     排序 从小到大
+				this.sort=function(arr1){
+				 	for(var i=0; i<this.length; i++){
+		     			for(var j=i+1; j<this.length; j++){
+		     				if(this[i]<this[j]){
+		     					var temp=this[i];
+		     					this[i]=this[j];
+		     					this[j]=temp;
+		     				}
+		     			}
+		     		}
+				}
+				//some   只要一个符合就全对
+				this.some = function(fn){
+					for(let i=0;i<this.length;i++){
+						if(fn(this[i])){
+							return true;
+						}	
+					}
+					return false;
+				}
+				//every   全符合才对
+				this.every=function every(fn){
+					for (var i = 0; i <this.length; i++) {
+						if(!fn(this[i])){
+							return false;
+						}		
+					}
+					return true;	
+				}
+				//map 
+				this.map=function(fn){
+					var newarr=[];
+					for(var i=0;i<this.length;i++){
+						newarr[newarr.length]=fn(this[i]);
+					}
+					return newarr;
+				}
+				//filter
+				this.filter=function(fn){
+					var newarr=[];
+					for(var i=0;i<this.length;i++){
+						if(fn(this[i])==true){
+						newarr[newarr.length]=this[i];
+						}
+					}
+					return newarr;
+				}
+			}
+		//indexOf    查找数组里数值首次出现的位置
+		//lastIndexOf     最后一次出现的位置
+		//includes     
+		//reverse  反转
+		//join     连接
+		//sort     排序
+		//some   只要一个符合就全对
+		//every   全符合才对
+		//map    
+		//filter
+		 
+	</script>
+</body>
+</html>
