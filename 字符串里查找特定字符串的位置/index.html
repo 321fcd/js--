@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字符串</title>
+</head>
+<body>
+	<script>
+		// 找百度位置
+		let url='http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com';
+		// 方法1
+			function replaceAll(str,fStr){
+				let star='*'.repeat(fStr.length);
+				a=[];
+				while(url.includes(fStr)==true){ 
+					a.push(url.indexOf(fStr));
+					// b=url.indexOf(fStr);
+					// a[a.length]=b;				
+					url=url.replace(fStr,star);
+				}
+				return a;
+			}
+		//方法2
+			// function replaceAll(str,fStr){
+			// 	let star='*'.repeat(fStr.length);d=[];			
+			// 	for(let i=0;i<str.length-5;i++){
+			// 		if(url.slice(i,i+5)==fStr){
+			// 			d.push(url.indexOf(fStr));
+			// 			url=url.replace(fStr,star);
+			// 		}
+			// 	}
+			// 	return d;
+			// }
+			let e=replaceAll(url,'baidu');
+			console.log(e);
+	</script>
+</body>
+</html>
