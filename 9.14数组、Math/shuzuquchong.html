@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let arr=[1,2,3,4,5,6,3];
+		// 去重第一种方法
+			function quchong(arr){
+				let a=[];
+				for(let i=0;i<arr.length;i++){
+					if(a.indexOf(arr[i])==-1){
+						a.push(arr[i]);
+					}
+				}
+				return a;
+				}
+			let b=quchong(arr);
+			function delRepeat(arr){
+		// 	去重第二种方法
+			// function quchong(arr){
+			// for(let i=0;i<arr.length;i++){
+				// if(!a.includes(arr[i])){
+				// 	a.push(arr[i]);
+				// }
+			// 	for(let j=i-1;i>=0;j--){
+			// 		if(arr[j]==arr[i]){
+			// 			break;
+			// 		}else{
+			// 			a.push(arr[i]);
+			// 		}
+			// 	}
+			// }
+				// return a;
+			// }
+			// let b=quchong(arr);
+		// 去重第三种方法
+			// function delRepeat(arr){	
+			// 	let a=[];
+			// 	for(let i=0;i<arr.length;i++){
+			// 		let panduan=true;
+			// 		for(let j=i+1;j<arr.length;j++){
+			// 			if(arr[j]==arr[i]){
+			// 				panduan=false;
+			// 			}
+			// 		}
+			// 		if(panduan){
+			// 			a.push(arr[i]);
+			// 		}
+			// 	}
+			// 	return a;
+			// }
+			// let b=delRepeat(arr);
+		// console.log(b);
+		// 数组去除重合，方法
+			//方法一
+				// let arr=[1,1,2,3,4,4,5,6,6,7];
+				// Array.prototype.delRepeat=function(){
+				// 	let a=[];
+				// 	for(let i=0;i<this.length;i++){
+				// 		let panduan=true;
+				// 		for(let j=i+1;j<this.length;j++){
+				// 			if(this[j]==this[i]){
+				// 				panduan=false;
+				// 				break;
+				// 			}
+				// 		}
+				// 		if(panduan){
+				// 			a.push(this[i]);
+				// 		}
+				// 	}
+				// 	return a;
+				// }
+				// let delRepeat=arr.delRepeat();
+				// console.log(delRepeat);
+			//方法二
+				// function delRepeat(){
+				// 	for(let i=0;i<arguments.length;i++){
+				// 			this[i]=arguments[i];
+				// 		}
+				// 	this.length=arguments.length;
+				// 	this.quchong=function(){
+				// 		let a=[];
+				// 		for(let i=0;i<this.length;i++){
+				// 			let panduan=true;
+				// 			for(let j=i+1;j<this.length;j++){
+				// 				if(this[j]==this[i]){
+				// 					panduan=false;
+				// 				}
+				// 			}
+				// 			if(panduan){
+				// 				a.push(this[i]);
+				// 			}
+				// 		}
+				// 		return a;
+				// 	}
+				// }
+				// let quchong=arr.quchong();
+				// console.log(quchong);
+	</script>
+</body>
+</html>

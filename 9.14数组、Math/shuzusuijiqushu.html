@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let arr=['a','b','c','d','e','f'];
+		//方法1
+			function qu(arr,num){
+				let arr1=[];
+				for(let i=0;i<num;i++){
+					arr1.push(arr[Math.floor(Math.random()*arr.length)]);			
+				}
+				return arr1;
+			}
+		// 方法2
+			// function qu(arr,num){
+			// 	let arr1=[]; arr2=[]; 
+			// 	while(arr1.length<num){
+			// 		let num=Math.floor(Math.random()*arr.length); 
+			// 			if(arr2.indexOf(num)==-1){
+			// 				arr1.push(arr[num]);
+			// 				arr2.push(num);
+			// 			}
+			// 	}
+			// 	return arr1;
+			// }
+		//方法3
+			// function qu(arr,num){
+			// 	let arr1=[];				
+			//  	for(let i=0;i<num;i++){	
+			//  	let str=Math.floor(Math.random()*arr.length);			 			 	
+			//  		if(arr1.indexOf(arr[str])==-1){
+			//  			arr1.push(arr[str]);	
+			//  		}else{
+			//  			i--;
+			//  		}			
+			//  	}
+			//  	return arr1;
+			// }
+		console.log(qu(arr,3));
+	</script>
+</body>
+</html>
