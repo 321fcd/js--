@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/lianxi.js"></script>
+</head>
+<body>
+	<div class="box">111111
+		<div class="box1">
+			222222
+			<span class="son">333333</span>
+			<ul>
+				<li></li>
+			</ul>
+		</div>
+		<span class="son1">span</span>
+		<h1>h1</h1>
+		<div>div1</div>
+		<div>     </div>
+		<span>span1</span>
+	</div>
+	<script>
+		let div=document.querySelector('div.box1');
+		let child=children(div);
+		console.log(child);
+		let nexta=next(div,'div');
+		console.log(nexta);
+	</script>
+</body>
+</html>
