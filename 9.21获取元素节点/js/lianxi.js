@@ -2,7 +2,7 @@
 * @Author: HP
 * @Date:   2017-09-21 16:15:41
 * @Last Modified by:   HP
-* @Last Modified time: 2017-09-21 22:04:52
+* @Last Modified time: 2017-09-22 09:38:43
 */
 //children  获取某一个元素的元素节点
 	function children(parent){
@@ -45,14 +45,17 @@
 		// }
 	//方法二
 		function next(element,tagname){
-			let nextaaa=element.nextElementSibling;   //下一个兄弟元素节点
-			let nextaaaa=nextaaa.nodeName.toLowerCase();  //该元素节点组成的字符串
-			while(nextaaaa!==tagname){
-				nextaaa=nextaaa.nextElementSibling;   //下一个兄弟元素的下一个兄弟元素节点
-				if(nextaaa==null){
+			let next1=element.nextElementSibling;   //下一个兄弟元素节点
+			if(next1==null){
+				return null;
+			}
+			let next2=next1.nodeName.toLowerCase();  //该元素节点组成的字符串
+			while(next2!==tagname){
+				next1=next1.nextElementSibling;   //下一个兄弟元素的下一个兄弟元素节点
+				if(next1==null){
 					return null;
 				}
-				nextaaaa=nextaaa.nodeName.toLowerCase();  ////该元素节点组成的字符串
+				next2=next1.nodeName.toLowerCase();  ////该元素节点组成的字符串
 			}
-			return nextaaa;
+			return next1;
 		}
