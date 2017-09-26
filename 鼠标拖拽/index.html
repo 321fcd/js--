@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/Drag.js"></script>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		.box{
+			width: 300px;
+			height: 300px;
+			background: red;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.son{
+			width: 300px;
+			height: 300px;
+			background: yellow;
+			position: absolute;
+			top: 300px;
+			left: 300px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="son"></div>
+	<script>
+		let box=document.querySelector('div.box');
+		let son=document.querySelector('div.son');
+		// box.onmouseover=function(){
+		// 	box.style.background='green';
+		// }
+		// box.addEventListener('click', function(){   
+		// 	this.style.background='green';
+		// }, false);   
+		 //事件类型，事件处理函数，布尔值
+		// box.addEventListener('click', function(){
+		// 	this.style.borderRadius='50%';
+		// }, false);
+		// window.addEventListener('load', function(){
+		// 	let box=document.querySelector('div.box');
+		// 	box.addEventListener('mousemove',function(e){
+		// 		console.log(e);
+		// 	})
+		// 	box.addEventListener('mousemove',fn)
+		// 	function fn(e){
+		// 		this.innerHTML=`
+		// 			相对于页面pageX=${e.pageX};<br>
+		// 			相对于页面pageY=${e.pageY};<br>
+		// 			相对于浏览器clientX=${e.clientX};<br>
+		// 			相对于浏览器clientY=${e.clientY};<br>
+		// 			相对于事件源offsetX=${e.offsetX};<br>
+		// 			相对于事件源offsetY=${e.offsetY};<br>
+		// 			相对于屏幕screenX=${e.screenX};<br>
+		// 			相对于屏幕screenY=${e.screenY};
+		// 			`
+		// 	}
+		// }) 
+		// 拖拽
+		// window.addEventListener('load', function(){
+		// 	//drag   down move
+		// 	let box=document.querySelector('div.box');
+		// 	box.addEventListener('mousedown', function(e){
+		// 		let ox=e.offsetX,oy=e.offsetY;
+		// 		document.addEventListener('mousemove',fn)
+		// 		box.addEventListener('mouseup',function(){
+		// 			document.removeEventListener('mousemove',fn)
+		// 		})
+		// 		function fn(e){
+		// 			let lefts=e.clientX-ox,tops=e.clientY-oy;
+		// 			box.style.left=`${lefts}px`;
+		// 			box.style.top=`${tops}px`;
+		// 		}
+		// 	})
+		// })
+			let drag=new Drag(box);
+			let drags=new Drag(son);
+			drag.move();   //调用
+			drags.move();   //调用
+		
+	</script>
+</body>
+</html>
