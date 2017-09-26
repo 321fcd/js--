@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.small{
+			width: 300px;
+			height: 225px;
+			position: relative;
+		}
+		.small img{
+			width: 100%;
+			height: 100%;
+		}
+		.big{
+			width: 300px;
+			height: 225px;
+			overflow: hidden;
+			position: relative;
+		}
+		.big img{
+			width: 900px;
+			height: 675px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.zhe{
+			width: 100px;
+			height: 75px;
+			background: rgba(0, 0, 0, 0.3);
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.opacity{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 999;
+		}
+	</style>
+</head>
+<body>
+	<div class="small">
+		<div class="zhe"></div>
+		<img src="img/201411130323363960.jpg" alt="">
+		<div class="opacity"></div>
+	</div>
+	<div class="big">
+		<img src="img/201411130323363960.jpg" alt="" class="aa">
+	</div>
+	<script>
+		// $(function(){
+		// 	let small=$('.small')[0];
+		// 	let big=$('.big')[0];
+		// 	let bImg=$('.aa',big)[0];
+		// 	let bili=bImg.offsetWidth/small.offsetWidth;
+		// 	console.log(bili)
+		// 	small.addEventListener('mousemove',function fn(e){
+		// 		let ox=e.offsetX,oy=e.offsetY;
+		// 		bImg.style.left=-ox*bili+'px';
+		// 		bImg.style.top=-oy*bili+'px';
+		// 	})
+		// })
+		$(function(){
+			let small=$('.small')[0];
+			let big=$('.big')[0];
+			let zhe=$('.zhe')[0];
+			let opacity=$('.opacity')[0];
+			let bImg=$('.aa',big)[0];
+			let bili=small.offsetWidth/zhe.offsetWidth;  //比例
+			let zw=zhe.offsetWidth/2;		//遮罩二分之一	
+			let zh=zhe.offsetHeight/2;
+			let sw=small.offsetWidth;    //盒子宽高
+			let sh=small.offsetHeight;
+			small.addEventListener('mousemove',function(e){
+				let ox=e.offsetX,oy=e.offsetY;   //鼠标距离盒子位置
+				if(oy>=sh-zh){        
+					oy=sh-zh;
+				}
+				if(oy<=zh){
+					oy=zh;
+				}
+				if(ox>=sw-zw){
+					ox=sw-zw;
+				}
+				if(ox<=zw){
+					ox=zw;
+				}
+				let zhew=ox-zw;       
+				let zheh=oy-zh;
+				zhe.style.left=zhew+'px';
+				zhe.style.top=zheh+'px';
+				bImg.style.left=-zhew*bili+'px';
+				bImg.style.top=-zheh*bili+'px';
+			})
+		})	
+		function $(select,ranger){
+			if(typeof select=='string'){
+				ranger=ranger||document;
+				var first=select.charAt(0);
+				if(first=='.'){
+					return ranger.getElementsByClassName(select.substring(1));
+				}else if(first=='#'){
+					return ranger.getElementById(select.substring(1));
+				}else if(/^[a-z][a-z1-6]{0,7}$/.test(select)){
+					return ranger.getElementsByTagName(select);
+				}
+			}else if(typeof select=='function'){
+				window.addEventListener('load',select);
+			}	
+		}
+		// document.onkeydown=function(e){
+ 	// 		console.log(e.key,e.keyCode)
+		// }
+	</script>
+</body>
+</html>
