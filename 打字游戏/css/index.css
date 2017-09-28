@@ -1,0 +1,56 @@
+/*
+* @Author: HP
+* @Date:   2017-09-28 14:36:42
+* @Last Modified by:   HP
+* @Last Modified time: 2017-09-28 22:42:28
+*/
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+body{
+	width: 100%;
+	height: 600px;
+}
+div.dd{
+	width: 50px;
+	height: 50px;
+	background: blue;
+	border-radius: 5px;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	line-height: 50px;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+div.feng{
+	display: block;
+	width: 100px;
+	height: 100px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 24;
+	background: yellow;
+	font-size: 40px;
+	color: blue;
+	text-align: center;
+	line-height: 100px;
+}
+div.life{
+	display: block;
+	width: 100px;
+	height: 100px;
+	position: fixed;
+	top: 120px;
+	right: 0;
+	z-index: 24;
+	background: red;
+	font-size: 40px;
+	color: #fff;
+	text-align: center;
+	line-height: 100px;
+}
