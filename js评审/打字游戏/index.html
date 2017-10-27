@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>打字游戏</title>
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/index.js"></script>
+</head>
+<body>
+	<div class="kaitou"><span>5</span>s秒后开始游戏。</div>
+	<div class="guanqia">第<span>1</span>关</div>
+	<div class="fenshu">得分: <span>0</span></div>
+	<div class="life">生命: <span>10</span></div>
+	<script>
+		let game=new Game();
+		let kaitou=document.querySelector('.kaitou');
+		let daoshu=kaitou.querySelector('span');
+		let ttt=window.setInterval(function(){
+ 			if(daoshu.innerText==1){
+				clearInterval(ttt);
+				kaitou.remove();
+			}
+			console.log(daoshu.innerHTML)
+			daoshu.innerText--;			
+		},1000);
+		// let a=game.start();
+		let b=setTimeout(function(){
+			game.start();
+		},5000);
+	</script>
+</body>
+</html>

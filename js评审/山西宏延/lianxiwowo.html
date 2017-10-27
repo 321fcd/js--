@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>联系我们</title>
+	<link rel="stylesheet" href="css/response.css">
+	<link rel="stylesheet" href="css/lianxiwomen.css">
+	<script src="jquery-3.2.1.js"></script>
+	<script src="js/lianxiwomen.js"></script>
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="百度地图,百度地图API，百度地图自定义工具，百度地图所见即所得工具" />
+    <meta name="description" content="百度地图API自定义地图，帮助用户在可视化操作下生成百度地图" />
+    <title>百度地图API自定义地图</title>
+    <!--引用百度地图API-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+	
+</head>
+<body>
+	  
+
+		<div class="beijing"><img src="img/3917_j50tkrb6.jpg" alt=""></div>
+	<div class="bao">
+		<div class="bao1">
+			<ul class="gongneng a1">
+					<li class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="cha.html">网站首页</a></li>
+					<li class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="guanyuwomen.html">关于我们</a></li>
+					<li class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="chapinzhanshi.html">茶品展示</a></li>
+					<li class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="zhichagoni.html">制茶工艺</a></li>
+					<li class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="zixunzhongxin.html">咨讯中心</a></li>
+					<li class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="lianxiwowo.html">联系我们</a></li>
+			</ul>
+		</div>
+	</div>
+	<header>
+		<div class="shang"><img src="img/3917_j51ujw9s(2).png" alt=""></div>
+		<div class="gan"></div>
+		<div class="container">
+			<ul class="gongneng row a2">
+				<li class="col-lg-2 col-md-2 hidden-sm hidden-xs"><a href="cha.html">网站首页</a></li>
+				<li class="col-lg-2 col-md-2 hidden-sm hidden-xs"><a href="guanyuwomen.html">关于我们</a></li>
+				<li class="col-lg-2 col-md-2 hidden-sm hidden-xs"><a href="chapinzhanshi.html">茶品展示</a></li>
+				<li class="col-lg-2 col-md-2 hidden-sm hidden-xs"><a href="zhichagoni.html">制茶工艺</a></li>
+				<li class="col-lg-2 col-md-2 hidden-sm hidden-xs"><a href="zixunzhongxin.html">咨讯中心</a></li>
+				<li class="col-lg-2 col-md-2 hidden-sm hidden-xs"><a href="lianxiwowo.html">联系我们</a></li>
+			</ul>
+			<div class="hezishang"></div>
+			<span class="ming">HERBAL & SPICED</span>
+			<div class="hezixia">联系我们</div>
+		</div>
+	</header>
+	<div class="kong"></div>
+	<section>
+		<div class="bai">
+			<div class="zuoa">
+				<div style="width:100%;height:100%;border:#ccc solid 1px;font-size:12px" id="map"></div>
+			</div>
+			<div class="zuob">
+				<div class="ming1">宏延茶业有限公司</div>
+				<div class="dizhi">地址：成都市高新区菁蓉国际广场</div>
+				<div class="youbian">邮编：5230xx</div>
+				<div class="dianhua">电话：400-820-8820</div>
+				<div class="youxiang">邮箱：5339887@hr.com</div>
+				<div class="weixin">微信公众号：宏延红茶</div>
+			</div>
+		</div>
+	</section>
+	<div class="kong"></div>
+	<div class="di">
+		<div class="kong"></div>
+		<ul>
+			<li class="yi">
+				<img src="img/3917_j51ujw9s(1).png" alt="">
+				<div class="linian">这里会写下我们公司的一些寄予或者理念，又或者是对我们的自己的一些介绍。</div>
+			</li>
+			<li class="er">
+				<div class="kuaijie">快捷通道</div>
+				<ul>
+					<li>茶品中心</li>
+					<li>新闻资讯</li>
+					<li>关于我们</li>
+					<li>联系我们</li>
+				</ul>
+			</li>
+			<li class="san">
+				<div class="kuaijie">热销茶品</div>
+				<ul>
+					<li><img src="img/3917_j50tk5kw.jpg" alt=""></li>
+					<li><img src="img/3917_j50u3bk9.jpg" alt=""></li>
+					<li><img src="img/3917_j50tkrb6.jpg" alt=""></li>
+					<li><img src="img/3917_j50tkiss.jpg" alt=""></li>
+				</ul>
+			</li>
+		</ul>
+		<div class="gan3"></div>
+		<div class="jiewei">© 宏延茶业有限公司  蜀ICP备13004xxx号-4</div>
+	</div>
+</body>
+ <script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+      map.centerAndZoom(new BMap.Point(112.571083,37.789645),12);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var markers = [
+        {content:"",title:"山西宏延茶叶",imageOffset: {width:0,height:3},position:{lat:37.813481,lng:112.56016}}
+      ];
+      for(var index = 0; index < markers.length; index++ ){
+        var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+        var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+          imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+        })});
+        var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+        marker.setLabel(label);
+        addClickHandler(marker,infoWindow);
+        map.addOverlay(marker);
+      };
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+    var map;
+      initMap();
+  </script>
+</html>

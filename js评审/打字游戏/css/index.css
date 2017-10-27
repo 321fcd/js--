@@ -1,0 +1,94 @@
+/*
+* @Author: HP
+* @Date:   2017-09-28 14:36:42
+* @Last Modified by:   HP
+* @Last Modified time: 2017-09-29 15:36:26
+*/
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: url('../img/758PICD58PICBst.jpg') no-repeat center /cover;      
+	                            /*  位置 尺寸 */
+	font: ifalic bold 20px/20px sans-serif;
+	/* 字体            大小  行高(1.5（倍数）)  */
+}
+div.kaitou{
+	width: 100%;
+	height: 100%;
+	font-size: 50px;
+	color: #ccc;
+	text-align: center;
+	line-height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 25;
+}
+div.kaitou>span{
+	font-size: 60px;
+	color: blue;
+	text-align: center;
+	line-height: 100%;
+}
+div.dd{
+	width: 60px;
+	height: 80px;
+	background-size: 100% 100%;
+	/* background: blue; */
+	font-size: 30px;
+	color: rgba(0, 0, 0, 0);
+	text-align: center;
+	line-height: 80px;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+div.guanqia{
+	width: 120px;
+	height: 30px;
+	background: yellow;
+	font-size: 26px;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 5px;
+	position: fixed;
+	top: 0;
+	left: 0; 
+}
+div.fenshu{
+	width: 120px;
+	height: 30px;
+	background: yellow;
+	font-size: 26px;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 5px;
+	position: fixed;
+	top: 0;
+	left: 150px;
+}
+div.life{
+	width: 120px;
+	height: 30px;
+	background: red;
+	font-size: 26px;
+	text-align: center;
+	border-radius: 5px;
+	line-height: 30px;
+	position: fixed;
+	top: 0;
+	left: 300px;
+}
+
+div>span{
+	font-size: 26px;
+	color: blue;
+}
+

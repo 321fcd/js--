@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>扑克牌</title>
+	<script src="../jquery-3.2.1.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			box-sizing: border-box;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		body{
+			margin-top: 10px;
+			overflow: hidden;
+			background: #ccc;
+		}
+		.zhuozi{
+			width: 700px;
+			height: 600px;
+			margin: 0 auto;
+			background: url('img/10_215649_8.jpg') no-repeat center;
+			background-size: 100% 100%;
+			position: relative;
+		}
+		.puke{
+			width: 90px;
+			height: 130px;
+			margin-right: 10px;
+			position: absolute;
+			top: 0;
+			left: 300px;
+			background-position: center;
+			background-size: cover;
+			opacity: 0;
+			cursor: pointer;
+		}
+		.zuo,.you{
+			width: 60px;
+			height: 40px;
+			background: red;
+			position: absolute;
+			left: 150px;
+			font-size: 30px;
+			text-align: center;
+			line-height: 40px;
+			cursor: pointer;
+		}
+		.zuo{
+			bottom: 80px;
+		}
+		.you{
+			bottom: 20px;
+		}
+		.don{
+			left: 250px;
+		}
+	</style>
+</head>
+<body>
+	<div class="zhuozi">
+		<div class="zuo">左</div>
+		<div class="you">右</div>
+	</div>
+	<script>
+		$(function(){
+			let color=['q','p','h','s'];   //梅花 方块 红桃  黑桃
+			let puke=[];
+			let flag={};
+			let arr=[];
+			let arr1=[];
+			// for(let i=0;i<52;i++){
+			// 	let hua=color[Math.floor(Math.random()*color.length)];
+			// 	let num=Math.floor(Math.random()*13+1);
+			// 	while(flag[`${hua}_${num}`]){
+			// 		hua=color[Math.floor(Math.random()*color.length)];
+			// 		num=Math.floor(Math.random()*13+1);
+			// 	}
+			// 	puke.push({hua,num});
+			// 	flag[`${hua}_${num}`]=true;
+			// }
+			while(puke.length<52){
+				let hua=color[Math.floor(Math.random()*color.length)];
+				let num=Math.floor(Math.random()*13+1);
+				if(!flag[`${hua}_${num}`]){
+					puke.push({hua,num});
+					flag[`${hua}_${num}`]=true;
+				}
+			}
+			let index=0;
+			for(let i=0;i<7;i++){
+				for(let j=0;j<=i;j++){
+					let left=300-50*i+100*j,
+						top=50*i;
+					$('<div>').addClass('puke box')
+					.css('background-image',`url(img/${puke[index]['num']}${puke[index]['hua']}.jpg)`)
+					.appendTo('.zhuozi')
+					.delay(index*10)
+					.animate({left,top,opacity:1})
+					.attr('id',`${i}_${j}`)
+					.attr('num',`${puke[index]['num']}`);
+					index++;
+				}
+			}
+			
+			for(;index<puke.length;index++){
+				$('<div>').addClass('puke box1')
+				.css('background-image',`url(img/${puke[index]['num']}${puke[index]['hua']}.jpg)`)
+					.appendTo('.zhuozi')
+					.delay(index*10).animate({left:0,top:460,opacity:1})
+					.attr('num',`${puke[index]['num']}`)
+					.attr('id',`${111}_${111}`);
+				arr.push($('<div>'));
+			}
+			let first=null;
+			$('.zhuozi').on('click','.puke',function(e){
+				let element=$(e.target);
+				let id=element.attr('id').split('_');
+				let ele1=`#${id[0]*1+1}_${id[1]*1}`,ele2=`#${id[0]*1+1}_${id[1]*1+1}`;
+				if($(ele1).length || $(ele2).length){
+					return;
+				}
+				element.toggleClass('aa');
+				if(element.hasClass('aa')){
+					element.animate({top:'-=10'}).css('boxShadow','0 0 0 2px blue');
+				}else{
+					element.animate({top:'+=10'});
+				}
+				if(!first){
+					first=$(e.target);
+				}else{
+					if((element.attr('num')*1+first.attr('num')*1)==14){
+						$('.aa').animate({left:600,top:0,opacity:0},function(){
+							$(this).remove();
+						})
+					}else{
+						$('.aa').css('boxShadow','0 0 0 0 blue').animate({top:'+=10'},function(){
+							$(this).removeClass('aa');
+						});
+					}
+					first=null;
+				}
+			})
+			let z=23,y=0,k=0;
+			$('.zuo').on('click',function(){
+				if(!$('.box1').length){return}
+				let ss=$('.box1')[z];
+				$(ss).addClass('box2').removeClass('box1').css({zIndex:y++}).animate({left:250});
+				z--;	
+			})
+			let x=24-z;
+			$('.you').on('click',function(){
+				if(!$('.box2').length){return}
+				let ss=$('.box2')[x-1];
+				$(ss).addClass('box1').removeClass('box2').css({zIndex:y++}).animate({left:0});
+				z++;
+			})
+		})
+	</script>
+</body>
+</html>

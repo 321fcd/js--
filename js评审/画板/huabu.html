@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>画布</title>
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/infex.js"></script>
+	<script src="js/palette.js"></script>
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+</head>
+<body>
+	 <div class="zuo">
+	 	<ul class="tools">
+	 		<li id="brush" class="iconfont icon-huabi"></li>
+	 		<li id="line" class="tool iconfont icon-zhixian"></li>
+	 		<li id="dashed" class="tool iconfont icon-xuxian"></li>
+	 		<li id="circle" class="tool iconfont icon-yuan"></li>
+	 		<li id="square" class="tool iconfont icon-zhengfangxing"></li>
+	 		<li id="poly" class="tool iconfont icon-duobianxing"></li>
+	 		<li id="polygon" class="tool iconfont icon-wujiaoxing"></li>
+
+	 		<div class="gan"></div>
+
+	 		<li id="xiankuan" class="tool iconfont">线宽</li>
+
+	 		<li id="stroke" class="iconfont icon-miaobian" active="true"></li>
+	 		<li id="strokec" class=""><input type="color" id="strokeStyle"></li>
+
+	 		<li id="" class="tool iconfont"></li>
+
+	 		<li id="fill" class="iconfont icon-tianchong"></li>
+	 		<li id="fillc" class=""><input type="color" id="fillStyle"></li>
+
+	 		<div class="gan"></div>
+
+	 		<li id="xiangpi" class="tool iconfont icon-xiangpi"></li>
+			<li id="fuzhi" class="tool iconfont">裁剪</li>
+			<li id="ziti" class="tool iconfont icon-22"></li>
+	 	</ul>
+	 </div>
+	<div class="shang">
+		<ul class="shang1">
+			<li id="chexiao" class="tool iconfont">撤销</li>
+			<li id="clearAll" class="tool iconfont">清空</li>
+			<li id="newFile" class="tool iconfont">新建</li>
+			<li id="fanxiang" class="tool iconfont">反向</li>
+			
+			<li class=""><a href="" id="save">保存</a></li>
+			
+		</ul>
+	</div>
+	<div class="box">
+		<canvas width="798" height="528"></canvas>
+		<div class="zhe"></div>	
+		<div class="caijian"></div>
+		<div class="opacity"></div>
+	</div>
+<!-- 撤销 复制 粘贴  -->
+<!-- 画笔 画直线 画虚线 画圆 三角形 正方形   画矩形  多边形  五角星  多角形 -->
+	
+</body>
+</html>

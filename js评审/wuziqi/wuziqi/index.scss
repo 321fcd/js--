@@ -1,0 +1,191 @@
+@mixin auto{
+	margin-left:auto;
+	margin-right:auto;
+}
+@mixin center{
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	margin:auto;
+}
+@mixin centerS($w,$h){
+	position:absolute;
+	top:0;
+	left:0;
+	margin-top:$w/2;
+	margin-left:$h/2;
+}
+@mixin circle{
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	border-radius:50%;
+}
+@mixin borderR($r){
+	-webkit-border-radius:$r;
+	-moz-border-radius:$r;
+	border-radius:$r;
+}
+$width:600px;
+$jpg1:'img/3.jpg';
+$jpg2:'img/73y58PICJ9n_1024.jpg';
+
+*{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+html,body{
+	width:100%;
+	height:100%;
+}
+body{
+	overflow:hidden;
+	background:#fff;
+	background:url("#{$jpg2}") center / cover;
+	background-size:100%,100%;
+}
+.renren{
+	width: 120px;
+	height: 30px;
+	background: yellow;
+	font-size: 26px;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 5px;
+	position: fixed;
+	top: 20px;
+	left: 10px;
+	cursor: pointer;
+}
+.renji{
+	width: 120px;
+	height: 30px;
+	background: yellow;
+	font-size: 26px;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 5px;
+	position: fixed;
+	top: 60px;
+	left: 10px;
+	cursor: pointer;
+}
+.bei{
+	width:$width+45px;
+	height:$width+45px;
+	@include center;	
+	background:url("#{$jpg1}") center / cover;
+	background-size:100%,100%;
+}
+.qipan{
+	width:$width;
+	height:$width;
+	@include center;
+}
+.qizi{
+	width:$width/15-10px;
+	height:$width/15-10px;
+	margin:5px;
+	float:left;
+	@include circle;
+	position:relative;
+	z-index:999;	
+}
+.hei{
+	background:black;
+}
+.bai{
+	background:#fff;
+}
+.hang{
+	width:$width - $width/15;
+	height:1px;
+	background:black;
+	position:absolute;
+	left:$width/15/2;
+	opacity:0;
+}
+.shu{
+	width:1px;
+	height:$width - $width/15;
+	background:black;
+	position:absolute;
+	top:$width/15/2;
+	opacity:0;
+}
+@for $i from 0 through 14{
+	.hang:nth-of-type(#{$i+1}){
+		top:$width/30+$i*$width/15;
+		animation:hangd 1s ease $i*0.05s forwards;
+	}
+	.shu:nth-of-type(#{$i+1}){
+		left:$width/30+$i*$width/15;
+		animation:shud 1s ease $i*0.05s forwards;
+	}
+}
+.yuan{
+	width:$width/60;
+	height:$width/60;
+	background:black;
+	@include circle;
+	transform:translate3d(-50%,-50%,0);
+	animation:diaoluo 3s ease;
+	@for $i from 1 through 5{
+		@nth-of-type(#{$i}){
+			animation-delay:$i*0.1s;
+		}
+	}
+	position:absolute;
+	&:nth-of-type(1){
+		left:3.5*$width/15;
+		top:3.5*$width/15;
+	}
+	&:nth-of-type(2){
+		left:11.5*$width/15;
+		top:3.5*$width/15;
+	}
+	&:nth-of-type(3){
+		left:7.5*$width/15;
+		top:7.5*$width/15;
+	}
+	&:nth-of-type(4){
+		left:3.5*$width/15;
+		top:11.5*$width/15;
+	}
+	&:nth-of-type(5){
+		left:11.5*$width/15;
+		top:11.5*$width/15;
+	}
+}
+@keyframes diaoluo{
+	0%{
+		transform:translate3d(-50%,-50%,0);
+		opacity:0;
+	}
+	100%{
+		transform:translate3d(-50%,-50%,0);
+		opacity:1;
+	}
+}
+@keyframes hangd{
+	0%{
+		transform:translate3d(100px,0,0);
+		opacity:0;
+	}
+	100%{
+		transform:translate3d(0,0,0);
+		opacity:1;
+	}
+}
+@keyframes shud{
+	0%{
+		transform:translate3d(0,100px,0);
+		opacity:0;
+	}
+	100%{
+		transform:translate3d(0,0,0);
+		opacity:1;
+	}
+}

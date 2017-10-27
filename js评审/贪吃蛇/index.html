@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>贪吃蛇</title>
+</head>
+<style>	
+.sence{
+	width: 601px;
+	height: 601px;
+	background: #000;
+	margin: 30px auto;
+}
+.ge{
+	width: 29px;
+	height: 29px;
+	float: left;
+	margin-left: 1px;
+	margin-top: 1px;
+	background: url('img/caodi.jpg') center / cover;
+}
+.she{
+	background: green!important;    /* 优先级最高 */
+}
+</style>
+<body>
+	<!-- <div class="kaishi">开始游戏</div>
+	<div class="fenshu">得分: <span>0</span></div> -->
+	<div class="sence"></div>
+	<script src="js/index.js"></script>
+	<script>
+		let tcs=new Snake();
+		tcs.start();
+	</script>
+</body>
+</html>
